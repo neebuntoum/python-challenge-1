@@ -225,7 +225,7 @@ for x in order:
     item_ordered = x[0]['menu item name']
     price = x[1]["item price"]
     qty = x[2]["quantity ordered"]
-    full_order = [item_ordered, price, qty]
+    # full_order = [item_ordered, price, qty]
 
 #     # 8. Calculate the number of spaces for formatted printing
      
@@ -239,7 +239,7 @@ for x in order:
 
 #     # 10. Print the item name, price, and quantity
 
-    print(f"{item_ordered}{item_spaces} | ${price}{price_spaces} | {qty}{qty_spaces}")
+    print(f"{item_ordered}{item_spaces}[0] | ${price}{price_spaces} | {qty}{qty_spaces}")
 # # 11. Calculate the cost of the order using list comprehension
 # # Multiply the price by quantity for each item in the order list, then sum()
 # # and print the prices.
