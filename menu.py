@@ -1,6 +1,4 @@
 # Menu dictionary
-from queue import PriorityQueue
-
 
 menu = {
     "Snacks": {
@@ -122,17 +120,17 @@ while place_order:
                     }
                     i += 1
             # 2. Ask customer to input menu item number
-            item = input(f"Enter {menu_category_name} item number")  
+            item_number = input(f"Enter {menu_category_name} item number: ")  
 
             # 3. Check if the customer typed a number
                 # Convert the menu selection to an integer
-            if item.isdigit():
-                item = int(item)
+            if item_number.isdigit():
+                item_number = int(item_number)
 
                 # 4. Check if the menu selection is in the menu items
-                if item in menu_items.keys():
+                if item_number in menu_items.keys():
 #                     # Store the item name as a variable
-                    item_name_price = menu_items[item]
+                    item_name_price = menu_items[item_number]
                     item_name = item_name_price["Item name"]
                     item_price = float(item_name_price["Price"])
 
@@ -147,7 +145,7 @@ while place_order:
 #                     # Add the item name, price, and quantity to the order list
                         if item_qty > 0:
                             order_list = [
-                                {"item name": item_name},
+                                {"menu item name": item_name},
                                 {"item price": item_price},
                                 {"quantity ordered": item_qty}
                             ]
@@ -169,19 +167,19 @@ while place_order:
 #             print(f"{menu_category} was not a menu option.")
             
         else:
-                print(f"{menu_category} is not an option.")
+                print(f"{menu_category} is not a menu option.")
 #     else:
 #         # Tell the customer they didn't select a number
 #         print("You didn't select a number.")
     else:
-        print("Please select a number ")
+        print("You didn't select a number.")
     
 
 #     while True:
 #         # Ask the customer if they would like to order anything else
 #         keep_ordering = input("Would you like to keep ordering? (Y)es or (N)o ")
     while True:
-        keep_ordering = input("Would you like to keep ordering? Y/N ").lower()
+        keep_ordering = input("Would you like to keep ordering? (Y)es or (N)o ").lower()
         
 #         # 5. Check the customer's input
 
@@ -219,20 +217,28 @@ print("Item name                 | Price  | Quantity")
 print("--------------------------|--------|----------")
 
 # # 6. Loop through the items in the customer's order
-
+for x in order:
+    item_ordered = x[0]['menu item name']
+    price = x[1]["item price"]
+    qty = x[2]["quantity ordered"]
+    full_order = [item_ordered, price, qty]
+    
+    space = " "
+    str_price = str(price)
+    format = f"{item_ordered}{space * (25 - len(item_ordered))} | {str_price *(7 - len(str_price))} | {qty}"
 
 #     # 7. Store the dictionary items as variables
 
 
 #     # 8. Calculate the number of spaces for formatted printing
 
-
+    
 #     # 9. Create space strings
 
 
 #     # 10. Print the item name, price, and quantity
 
-
+print(format)
 # # 11. Calculate the cost of the order using list comprehension
 # # Multiply the price by quantity for each item in the order list, then sum()
 # # and print the prices.
