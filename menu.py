@@ -57,12 +57,7 @@ menu = {
     "Item name": "string",
     "Price": float,
     "Quantity": int
-  },
-  {
-    "Item name": "string",
-    "Price": float,
-    "Quantity": int
-  },
+  }
 ] 
 
 # Launch the store and present a greeting to the customer
@@ -129,7 +124,7 @@ while place_order:
                     }
                     i += 1
             # 2. Ask customer to input menu item number
-            menu_item = input("Please enter a menu item number you would like to order")  
+            menu_item = input("Please enter a menu item number you would like to order\n")  
 
             # 3. Check if the customer typed a number
                 # Convert the menu selection to an integer
