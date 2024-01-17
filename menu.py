@@ -1,4 +1,7 @@
 # Menu dictionary
+from queue import PriorityQueue
+
+
 menu = {
     "Snacks": {
         "Cookie": .99,
@@ -195,18 +198,28 @@ while place_order:
 
 
 #                 # Tell the customer to try again
-
+        if keep_ordering == "y":
+            print(order_list)
+            print(order)
+            break
+        elif keep_ordering == "n":
+            print("Thank you for your order")
+            place_order = False
+            break
+        else:
+            print("Please try again")
 
 # # Print out the customer's order
 # print("This is what we are preparing for you.\n")
-
+print("This is what we are preparing for you.\n")
 # # Uncomment the following line to check the structure of the order
 # #print(order)
 
-# print("Item name                 | Price  | Quantity")
-# print("--------------------------|--------|----------")
+print("Item name                 | Price  | Quantity")
+print("--------------------------|--------|----------")
 
 # # 6. Loop through the items in the customer's order
+
 
 #     # 7. Store the dictionary items as variables
 
